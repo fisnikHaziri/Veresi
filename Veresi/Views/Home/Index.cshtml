@@ -4,18 +4,20 @@
 {
     foreach (var person in Model)
     {
-        <div class="card mb-3 border-black" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-6 d-flex align-items-center justify-content-center borderDashedRight">
-                    <h1>@person.FullName</h1>
-                </div>
-                <div class="col-md-6 px-4">
-                    <div class="card-body">
-                        <h2>@person.TotalDebt $</h2>
+        <a asp-controller="" asp-action="" ap-route-id="@person.id">
+            <div class="card mb-3 border-black" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-6 d-flex align-items-center justify-content-center borderDashedRight">
+                        <h1>@person.FullName</h1>
+                    </div>
+                    <div class="col-md-6 px-4">
+                        <div class="card-body">
+                            <h2>@person.TotalDebt $</h2>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     }
 }
 <div class="card mb-3 border-black" style="max-width: 540px;">
