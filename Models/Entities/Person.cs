@@ -11,14 +11,15 @@ namespace Model.Entities
     {
         public Guid id { get; set; }
         public string FullName { get; set; }
-        public string PhoneNumber { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public string? PhoneNumber { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public float? TotalDebt { get; set; } = 0;
 
         //Relationships
-        public List<Debt> Debts { get; set; }
-        public Category Category { get; set; }
+        public List<Debt>? Debts { get; set; }
+        public Category? Category { get; set; }
         [ForeignKey(nameof(Category))]
-        public Guid CategoryId { get; set; }
+        public Guid? CategoryId { get; set; }
 
     }
 }
