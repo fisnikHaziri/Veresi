@@ -2,36 +2,27 @@
 
 @if(Model != null)
 {
-    foreach (var person in Model)
-    {
-        <a asp-controller="" asp-action="" ap-route-id="@person.id">
-            <div class="card mb-3 border-black" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-6 d-flex align-items-center justify-content-center borderDashedRight">
-                        <h1>@person.FullName</h1>
-                    </div>
-                    <div class="col-md-6 px-4">
-                        <div class="card-body">
-                            <h2>@person.TotalDebt $</h2>
+    <div class="container d-flex gap-5 flex-wrap">
+        @foreach (var person in Model)
+        {
+            <a class="text-decoration-none col-5" asp-controller="Person" asp-action="Details" asp-route-id="@person.id">
+                <div class="card mb-3 border-black" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-6 d-flex align-items-center justify-content-center borderDashedRight">
+                            <h3 class="overflow-hidden">@person.FullName</h3>
+                        </div>
+                        <div class="col-md-6 px-4">
+                            <div class="card-body">
+                                <h2>@person.TotalDebt $</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </a>
-    }
-}
-<div class="card mb-3 border-black" style="max-width: 540px;">
-    <div class="row g-0">
-        <div class="col-md-6 d-flex align-items-center justify-content-center borderDashedRight">
-           <h1>Fisnik Haziri</h1>
-        </div>
-        <div class="col-md-6 px-4">
-            <div class="card-body">
-                <h1>32247 $</h1>
-            </div>
-        </div>
+            </a>
+        }
     </div>
-</div>
+}
+
 
 <style>
     .card{

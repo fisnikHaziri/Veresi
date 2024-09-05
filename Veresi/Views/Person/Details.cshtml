@@ -1,0 +1,21 @@
+﻿@model Model.Entities.Person
+
+<div class="container d-flex justify-content-between">
+	<div class="d-flex align-items-center gap-4">
+		<a class="rounded-pill border-0 text-center text-info" asp-controller="Home" asp-action="index">
+			<i class="bi bi-arrow-left-circle fs-1"></i>
+		</a>
+		<h1>@Model.FullName</h1>
+	</div>
+	<div class="d-flex align-items-center gap-4">
+		<h3>@Model.CreatedAt</h3>
+	</div>
+</div>
+<hr />
+@if(Model.Debts != null)
+{
+	@foreach(var debt in Model.Debts)
+	{
+		<h1>@debt.Amount</h1>
+	}
+}

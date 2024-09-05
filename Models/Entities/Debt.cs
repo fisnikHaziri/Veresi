@@ -11,7 +11,7 @@ namespace Model.Entities
     {
         public Guid id { get; set; }
         public DateTime CreatedAt { get; set; }
-        public float TotalAmount { get; set; }
+        public float Amount { get; set; }
 
         //Relations
         public Person Person { get; set; }
