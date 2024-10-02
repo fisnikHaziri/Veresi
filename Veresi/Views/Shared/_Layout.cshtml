@@ -13,7 +13,18 @@
     <header>
         <nav class="navbar bg-primary mb-5">
             <div class="container-fluid justify-content-between">
-                <a class="navbar-brand text-light fs-2">Veresi</a>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="navbar-brand text-light fs-2 " style="border-right: 1px dashed whitesmoke;padding-right:20px">Veresi</a>
+                    <div class="d-flex justify-content-start gap-4 align-items-center text-light">
+                        @if (ViewBag.Categories != null)
+                        {
+                            foreach (var category in ViewBag.Categories)
+                                {
+                                    <a asp-action="Index" asp-route-categoryFilter="@category.CategoryType">@category.CategoryType</a>
+                                }
+                        }
+                    </div>
+                </div>
                 <section class="d-flex gap-4 col-4 justify-content-end">
                     <form class="d-flex w-75" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

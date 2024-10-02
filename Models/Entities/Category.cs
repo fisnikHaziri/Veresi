@@ -12,6 +12,6 @@ namespace Model.Entities
         public string CategoryType { get; set; }
 
         //Relations
-        public List<Person> Persons { get; set; }
+        public List<Person> People { get; set; }
     }
 }

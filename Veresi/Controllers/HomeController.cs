@@ -17,9 +17,19 @@ namespace Veresi.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? categoryFilter)
         {
-            var data = await _context.people.ToListAsync();
+            var data = await _context.people
+                .Include(p => p.Debts)
+                .Include(p => p.Category)
+                .ToListAsync();
+            ViewBag.Categories = await _context.categories.ToListAsync();
+
+            if(categoryFilter != null)
+            {
+                data = data.Where(x => x.Category.CategoryType == categoryFilter).ToList();
+            }
+
             return View(data);
         }
 

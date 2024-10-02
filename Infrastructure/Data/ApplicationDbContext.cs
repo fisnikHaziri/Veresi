@@ -29,7 +29,7 @@ namespace Infrastructure.Data
                 .HasForeignKey(d => d.PersonId);
 
             modelBuilder.Entity<Category>()
-                .HasMany(c => c.Persons)
+                .HasMany(c => c.People)
                 .WithOne(p => p.Category)
                 .HasForeignKey(p => p.CategoryId);
         }

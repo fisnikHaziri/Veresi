@@ -34,5 +34,31 @@ namespace Veresi.Controllers
 
         }
 
+		public IActionResult Edit(Guid id)
+		{
+			var item = _context.people.FirstOrDefault(x => x.id == id);
+			return View(item);
+		}
+		[HttpPost]
+		public IActionResult Edit(Person person)
+		{
+			_context.people.Update(person);
+			_context.SaveChanges();
+			return RedirectToAction("Index", "Home");
+		}
+
+		public IActionResult Delete(Guid id)
+        {
+            var item = _context.people.FirstOrDefault(x => x.id == id);
+            return View(item);
+        }
+        [HttpPost]
+        public IActionResult Delete(Person person)
+        {
+            _context.people.Remove(person);
+            _context.SaveChanges();
+            return RedirectToAction("Index","Home");
+        }
+
     }
 }

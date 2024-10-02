@@ -1,0 +1,24 @@
+﻿@model Model.Entities.Debt
+
+<div class="container d-flex gap-4 align-items-center">
+	<a class="rounded-pill border-0 text-center text-info" asp-controller="Home" asp-action="index">
+		<i class="bi bi-arrow-left-circle fs-1"></i>
+	</a>
+	<h1>Create</h1>
+</div>
+<div class="container">
+	<form class="form-controll" method="post">
+		<input style="display: none" asp-for="@Model.id" />
+		<div class="d-flex gap-5">
+			<div class="d-flex flex-column col-4">
+				<label for="Amount" class="form-label mt-4 fs-4">Amount</label>
+				<input asp-for="@Model.Amount" required type="number" class="form-control fs-4 border-dark" step="0.01" id="Amount" aria-describedby="Amount" placeholder="55$">
+			</div>
+		</div>
+		<div class="my-5 col-9 justify-content-end d-flex px-5">
+			<a asp-action="Create">
+				<button type="submit" class="btn btn-success fs-4 px-5" style="letter-spacing: 1px; margin-right: 7px">Create</button>
+			</a>
+		</div>
+	</form>
+</div>

@@ -20,7 +20,7 @@ namespace Infrastructure.Repositories
         public async Task<List<Category>> GetAll()
         {
             var categories = await _context.categories
-                .Include(c => c.Persons)
+                .Include(c => c.People)
                 .ToListAsync();
             return categories;
         }
@@ -28,7 +28,7 @@ namespace Infrastructure.Repositories
         public async Task<Category> GetById(Guid id)
         {
             var category = await _context.categories
-                .Include(c => c.Persons)
+                .Include(c => c.People)
                 .FirstOrDefaultAsync(c => c.id == id);
             return category;
         }
